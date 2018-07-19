@@ -1,0 +1,24 @@
+{
+  "name": "music-playlist-app",
+  "version": "1.0.0",
+  "description": "Justin Dang",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dangjustintime/music-playlist-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dangjustintime/music-playlist-app/issues"
+  },
+  "homepage": "https://github.com/dangjustintime/music-playlist-app#readme"
+}
