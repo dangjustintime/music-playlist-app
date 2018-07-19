@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const userSchema = Schema({
   username: String,
-  password: String
+  password: String,
+  playlist: [String]
 })
 
 const User = mongoose.model('User', userSchema);
