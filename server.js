@@ -7,10 +7,8 @@ const mongoose = require('mongoose');
 app.use(express.static('public'));
 app.use(express.json());
 
-/*
-const todosController = require('./controllers/todos.js');
-app.use('/todos', todosController);
-*/
+const bboardController = require('./controllers/bboard.js');
+app.use('/bboard', bboardController);
 
 app.listen(3000, () => {
     console.log('listening...');
