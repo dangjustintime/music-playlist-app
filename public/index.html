@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="MusicApp">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js" charset="utf-8"></script>
+    <script src="/js/app.js" charset="utf-8"></script>
+  </head>
+  <body ng-controller="MusicController as ctrl">
+    <!-- Offer the user a login option if they're not logged in -->
+    <div class="login" ng-if="!ctrl.currentUser">
+      <a href="#" ng-click="loginAction=true;registerAction=false">Log In</a>
+      <a href="#" ng-click="registerAction=true;loginAction=false">Register</a>
+      <!-- Open the appropriate form once the user selects log in or register -->
+      <div ng-if="loginAction">
+        <form ng-submit="ctrl.logIn()">
+          <input type="text" placeholder="username" ng-model="loginUser">
+          <input type="password" placeholder="password" ng-model="loginPass">
+          <input type="submit" value="Log In">
+        </form>
+      </div>
+      <div ng-if="registerAction">
+        <form ng-submit="ctrl.register()">
+          <input type="text" placeholder="username" ng-model="registerUser">
+          <input type="password" placeholder="password" ng-model="registerPass">
+          <input type="submit" value="Register">
+        </form>
+      </div>
+    </div>
+    <!-- Friendly reminder to log in or register -->
+    <div class="noUser" ng-if="!ctrl.currentUser">
+      Please Log In or Register to create and access your custom playlist
+    </div>
+    <!-- Billboard search form -->
+    <div class="billboard">
+      Enter the date of billboard hits you wish to see
+      <form ng-submit="ctrl.getBboard()">
+        Month: <input type="number" placeholder="Month" ng-model="ctrl.month" min="1" max="12"><br/>
+        Day: <input type="number" placeholder="Day" ng-model="ctrl.day" min="1" max="31"><br/>
+        Year: <input type="number" placeholder="Year" ng-model="ctrl.year" min="1850" max="2018"><br/>
+        <input type="submit" value="Get Results">
+      </form>
+    </div>
+    <!-- Billboard results -->
+    <div class="results" ng-if="ctrl.results">
+      <ol class="resultsList">
+        <li class="result" ng-repeat="song in ctrl.results">
+          <img ng-src="{{song.cover}}" alt="cover of {{song.title}}" class="coverArt"/> <p>{{song.title}} By {{song.artist}}  </p>
+        </li>
+      </ol>
+    </div>
+    <!-- User playlist -->
+    <div class="playlists" ng-if="ctrl.userPlaylist">
+      <h2>Playlist</h2>
+      <div class="playlistContainer">
+        <div class="playlist" ng-repeat="song in ctrl.playlist">
+          <img ng-src="{{song.cover}}" alt="cover of {{song.title}}" class="coverArt"/> <p>{{song.title}} By {{song.artist}}  </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
