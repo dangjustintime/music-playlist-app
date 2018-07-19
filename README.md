@@ -2,3 +2,4 @@
 ## Authors
 Justin Dang
 Evan Connors
+Amit Zaman
