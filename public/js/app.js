@@ -8,18 +8,21 @@ app.controller('MusicController', ['$http', function($http) {
       method:'POST',
       url:'/sessions',
       data: {
-        username: loginUser,
-        password: loginPass
+        username: this.loginUser,
+        password: this.loginPass
       }
     }).then(response => {
       this.currentUser = response.data
       console.log('CurrentUser', this.currentUser);
+      this.getPlaylist();
     }, error => {
       console.log(error);
     })
   }
 
   this.register = () => {
+    console.log('user: ', this.registerUser);
+    console.log('pass: ', this.registerPass);
     $http({
       method:'POST',
       url:'/users',
@@ -30,6 +33,7 @@ app.controller('MusicController', ['$http', function($http) {
     }).then(response => {
       this.currentUser = response.data
       console.log('CurrentUser: ', this.currentUser);
+      this.createPlaylist();
     }, error => {
       console.log(error);
     })
@@ -81,6 +85,19 @@ app.controller('MusicController', ['$http', function($http) {
       data: this.userPlaylist
     }).then(response => {
       console.log('User Playlist: ', this.userPlaylist);
+    }, error => {
+      console.log(error);
+    })
+  }
+
+  this.getPlaylist = () => {
+    $http({
+      method:'GET',
+      url:'/playlists/' + this.currentUser.username
+    }).then(response => {
+      this.userPlaylist = response.data[0];
+      console.log('Playlist ', this.userPlaylist);
+      console.log('songs ', this.userPlaylist.songs);
     }, error => {
       console.log(error);
     })

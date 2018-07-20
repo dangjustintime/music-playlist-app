@@ -14,15 +14,15 @@
       <!-- Open the appropriate form once the user selects log in or register -->
       <div ng-if="loginAction">
         <form ng-submit="ctrl.logIn()">
-          <input type="text" placeholder="username" ng-model="loginUser">
-          <input type="password" placeholder="password" ng-model="loginPass">
+          <input type="text" placeholder="username" ng-model="ctrl.loginUser">
+          <input type="password" placeholder="password" ng-model="ctrl.loginPass">
           <input type="submit" value="Log In">
         </form>
       </div>
       <div ng-if="registerAction">
         <form ng-submit="ctrl.register()">
-          <input type="text" placeholder="username" ng-model="registerUser">
-          <input type="password" placeholder="password" ng-model="registerPass">
+          <input type="text" placeholder="username" ng-model="ctrl.registerUser">
+          <input type="password" placeholder="password" ng-model="ctrl.registerPass">
           <input type="submit" value="Register">
         </form>
       </div>
@@ -54,7 +54,7 @@
     <div class="playlists" ng-if="ctrl.userPlaylist">
       <h2>Playlist</h2>
       <div class="playlistContainer">
-        <div class="playlist" ng-repeat="song in ctrl.playlist">
+        <div class="playlist" ng-repeat="song in ctrl.userPlaylist.songs">
           <img ng-src="{{song.cover}}" alt="cover of {{song.title}}" class="coverArt"/> <p>{{song.title}} By {{song.artist}}  </p>
         </div>
       </div>
