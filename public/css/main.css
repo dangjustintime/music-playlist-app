@@ -1,0 +1,54 @@
+body {
+  background-color: #32CCB0;
+  color: #284854;
+}
+
+header {
+  background-color: #284854;
+  color: white;
+}
+
+.billboard {
+  text-align: center;
+}
+
+input {
+  width: 150px;
+}
+
+.coverArt {
+  width: 150px;
+  height: 150px;
+}
+
+
+h2, h4 {
+  text-align: center;
+}
+
+.results {
+  width: 90%;
+  margin: auto;
+}
+
+.submitButton {
+    background-color: white;
+    color: red;
+}
+
+.result {
+  width: 200px;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.resultsList {
+  display: flex;
+  overflow: auto;
+}
+
+#logoutButton {
+  float: right;
+}

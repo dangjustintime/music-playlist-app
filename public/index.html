@@ -2,11 +2,16 @@
 <html lang="en" dir="ltr" ng-app="MusicApp">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Hot 100</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js" charset="utf-8"></script>
     <script src="/js/app.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link rel="stylesheet" href="/css/main.css">
   </head>
   <body ng-controller="MusicController as ctrl">
+    <header>
+      <h1>Check Out Your Favorite Hits!</h1>
+    </header>
     <!-- Offer the user a login option if they're not logged in -->
     <div class="login" ng-if="!ctrl.currentUser">
       <a href="#" ng-click="loginAction=true;registerAction=false">Log In</a>
@@ -16,7 +21,7 @@
         <form ng-submit="ctrl.logIn()">
           <input type="text" placeholder="username" ng-model="ctrl.loginUser">
           <input type="password" placeholder="password" ng-model="ctrl.loginPass">
-          <input type="submit" value="Log In">
+          <input class="submitButton" type="submit" value="Log In">
         </form>
       </div>
       <div ng-if="registerAction">
@@ -31,25 +36,35 @@
     <div class="noUser" ng-if="!ctrl.currentUser">
       Please Log In or Register to create and access your custom playlist
     </div>
+
+    <!-- Logout -->
+    <button id="logoutButton" ng-click="ctrl.logout()" ng-if="ctrl.currentUser">Logout</button>
+
+  </br>
     <!-- Billboard search form -->
     <div class="billboard">
       Enter the date of billboard hits you wish to see
       <form ng-submit="ctrl.getBboard()">
-        Month: <input type="number" placeholder="Month" ng-model="ctrl.month" min="1" max="12"><br/>
-        Day: <input type="number" placeholder="Day" ng-model="ctrl.day" min="1" max="31"><br/>
-        Year: <input type="number" placeholder="Year" ng-model="ctrl.year" min="1850" max="2018"><br/>
+        Month: <input type="number" placeholder="Month" ng-model="ctrl.month" min="1" max="12">
+        Day: <input type="number" placeholder="Day" ng-model="ctrl.day" min="1" max="31">
+        Year: <input type="number" placeholder="Year" ng-model="ctrl.year" min="1850" max="{{ctrl.getMaxYear()}}">
         <input type="submit" value="Get Results">
       </form>
     </div>
+
     <!-- Billboard results -->
     <div class="results" ng-if="ctrl.results">
+      <h4>Results</h4>
       <ol class="resultsList">
         <li class="result" ng-repeat="song in ctrl.results">
-          <img ng-src="{{song.cover}}" alt="cover of {{song.title}}" class="coverArt"/> <p>{{song.title}} By {{song.artist}}  </p>
-          <button ng-click="ctrl.addSongToPlaylist(song)" ng-if="ctrl.currentUser">Add to Playlist</button>
+          <div>
+            <img ng-src="{{song.cover}}" alt="cover of {{song.title}}" class="coverArt"/> <p><strong>{{song.title}}</strong></br> By {{song.artist}}  </p>
+          </div>
+          <button class="addToPlaylistBtn" ng-click="ctrl.addSongToPlaylist(song)" ng-if="ctrl.currentUser">Add to Playlist</button>
         </li>
       </ol>
     </div>
+
     <!-- User playlist -->
     <div class="playlists" ng-if="ctrl.userPlaylist">
       <h2>Playlist</h2>
@@ -58,6 +73,7 @@
           <img ng-src="{{song.cover}}" alt="cover of {{song.title}}" class="coverArt"/> <p>{{song.title}} By {{song.artist}}  </p>
         </div>
       </div>
+
     </div>
   </body>
 </html>
