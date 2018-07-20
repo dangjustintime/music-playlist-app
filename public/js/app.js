@@ -15,6 +15,8 @@ app.controller('MusicController', ['$http', function($http) {
       this.currentUser = response.data
       console.log('CurrentUser', this.currentUser);
       this.getPlaylist();
+      this.loginUser = ""
+      this.loginPass = ""
     }, error => {
       console.log(error);
     })
@@ -106,6 +108,18 @@ app.controller('MusicController', ['$http', function($http) {
   this.getMaxYear = () => {
     let date = new Date(Date.now());
     return date.getFullYear();
+  }
+
+  this.logout = () =>{
+    $http({
+      method:'DELETE',
+      url:'/sessions'
+    }).then(response =>{
+      this.currentUser = undefined;
+      this.userPlaylist = undefined;
+    },(error)=>{
+      console.log(error);
+    })
   }
 
   this.getMaxYear();

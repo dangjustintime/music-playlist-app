@@ -47,10 +47,9 @@
       </form>
     </div>
 
+    <!-- Logout -->
+    <button ng-click="ctrl.logout()" ng-if="ctrl.currentUser">Logout</button>
 
-    <form ng-if="ctrl.currentUser" action="/sessions?_method=DELETE" method="POST">
-        <input type="submit" value="Logout"/>
-    </form>
 
 
     <!-- Billboard results -->
