@@ -3,8 +3,8 @@ const router = express.Router();
 const Playlists = require('../models/playlists.js');
 
 
-router.get('/', (req, res) =>{
-  Playlists.find({}, (err, foundPlaylists)=>{
+router.get('/:owner', (req, res) =>{
+  Playlists.find({owner: req.params.owner}, (err, foundPlaylists)=>{
     res.json(foundPlaylists);
   })
 });
