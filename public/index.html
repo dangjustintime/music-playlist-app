@@ -37,6 +37,9 @@
       Please Log In or Register to create and access your custom playlist
     </div>
 
+    <!-- Logout -->
+    <button id="logoutButton" ng-click="ctrl.logout()" ng-if="ctrl.currentUser">Logout</button>
+
   </br>
     <!-- Billboard search form -->
     <div class="billboard">
@@ -49,16 +52,15 @@
       </form>
     </div>
 
-    <!-- Logout -->
-    <button ng-click="ctrl.logout()" ng-if="ctrl.currentUser">Logout</button>
-
     <!-- Billboard results -->
     <div class="results" ng-if="ctrl.results">
       <h4>Results</h4>
       <ol class="resultsList">
         <li class="result" ng-repeat="song in ctrl.results">
+          <div>
             <img ng-src="{{song.cover}}" alt="cover of {{song.title}}" class="coverArt"/> <p><strong>{{song.title}}</strong></br> By {{song.artist}}  </p>
-          <button ng-click="ctrl.addSongToPlaylist(song)" ng-if="ctrl.currentUser">Add to Playlist</button>
+          </div>
+          <button class="addToPlaylistBtn" ng-click="ctrl.addSongToPlaylist(song)" ng-if="ctrl.currentUser">Add to Playlist</button>
         </li>
       </ol>
     </div>
