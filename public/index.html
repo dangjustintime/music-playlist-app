@@ -46,6 +46,7 @@
       <ol class="resultsList">
         <li class="result" ng-repeat="song in ctrl.results">
           <img ng-src="{{song.cover}}" alt="cover of {{song.title}}" class="coverArt"/> <p>{{song.title}} By {{song.artist}}  </p>
+          <button ng-click="ctrl.addSongToPlaylist(song)" ng-if="ctrl.currentUser">Add to Playlist</button>
         </li>
       </ol>
     </div>
