@@ -1,4 +1,10 @@
 body {
   background-color: #32CCB0;
-  color: #284854;
+  color: white;
+}
+
+header {
+  background-color: #284854;
+  color: white;
+  /* width: 100%; */
 }

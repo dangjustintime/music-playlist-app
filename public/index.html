@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="/css/main.css">
   </head>
   <body ng-controller="MusicController as ctrl">
-    <h1>Check Out Your Favorite Hits!</h1>
+    <header>
+      <h1>Check Out Your Favorite Hits!</h1>
+    </header>
     <!-- Offer the user a login option if they're not logged in -->
     <div class="login" ng-if="!ctrl.currentUser">
       <a href="#" ng-click="loginAction=true;registerAction=false">Log In</a>
