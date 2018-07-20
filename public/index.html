@@ -5,6 +5,7 @@
     <title></title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js" charset="utf-8"></script>
     <script src="/js/app.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
   </head>
   <body ng-controller="MusicController as ctrl">
     <!-- Offer the user a login option if they're not logged in -->
@@ -41,6 +42,13 @@
         <input type="submit" value="Get Results">
       </form>
     </div>
+
+
+    <form ng-if="ctrl.currentUser" action="/sessions?_method=DELETE" method="POST">
+        <input type="submit" value="Logout"/>
+    </form>
+
+
     <!-- Billboard results -->
     <div class="results" ng-if="ctrl.results">
       <ol class="resultsList">
@@ -50,6 +58,7 @@
         </li>
       </ol>
     </div>
+
     <!-- User playlist -->
     <div class="playlists" ng-if="ctrl.userPlaylist">
       <h2>Playlist</h2>
@@ -58,6 +67,7 @@
           <img ng-src="{{song.cover}}" alt="cover of {{song.title}}" class="coverArt"/> <p>{{song.title}} By {{song.artist}}  </p>
         </div>
       </div>
+
     </div>
   </body>
 </html>
