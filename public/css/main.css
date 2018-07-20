@@ -7,3 +7,31 @@ header {
   background-color: #284854;
   color: white;
 }
+
+.billboard {
+  text-align: center;
+}
+
+input {
+  width: 150px;
+}
+
+.coverArt {
+  width: 100px;
+  height: 100px;
+}
+
+
+h4 {
+  text-align: center;
+}
+
+.results {
+  width: 90%;
+  margin: auto;
+}
+
+.resultsList {
+  display: flex;
+  overflow: auto;
+}

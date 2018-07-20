@@ -36,13 +36,15 @@
     <div class="noUser" ng-if="!ctrl.currentUser">
       Please Log In or Register to create and access your custom playlist
     </div>
+
+  </br>
     <!-- Billboard search form -->
     <div class="billboard">
       Enter the date of billboard hits you wish to see
       <form ng-submit="ctrl.getBboard()">
-        Month: <input type="number" placeholder="Month" ng-model="ctrl.month" min="1" max="12"><br/>
-        Day: <input type="number" placeholder="Day" ng-model="ctrl.day" min="1" max="31"><br/>
-        Year: <input type="number" placeholder="Year" ng-model="ctrl.year" min="1850" max="{{ctrl.getMaxYear()}}"><br/>
+        Month: <input type="number" placeholder="Month" ng-model="ctrl.month" min="1" max="12">
+        Day: <input type="number" placeholder="Day" ng-model="ctrl.day" min="1" max="31">
+        Year: <input type="number" placeholder="Year" ng-model="ctrl.year" min="1850" max="{{ctrl.getMaxYear()}}">
         <input type="submit" value="Get Results">
       </form>
     </div>
@@ -50,10 +52,9 @@
     <!-- Logout -->
     <button ng-click="ctrl.logout()" ng-if="ctrl.currentUser">Logout</button>
 
-
-
     <!-- Billboard results -->
     <div class="results" ng-if="ctrl.results">
+      <h4>Results</h4>
       <ol class="resultsList">
         <li class="result" ng-repeat="song in ctrl.results">
           <img ng-src="{{song.cover}}" alt="cover of {{song.title}}" class="coverArt"/> <p>{{song.title}} By {{song.artist}}  </p>
