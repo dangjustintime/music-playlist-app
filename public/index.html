@@ -37,7 +37,7 @@
       <form ng-submit="ctrl.getBboard()">
         Month: <input type="number" placeholder="Month" ng-model="ctrl.month" min="1" max="12"><br/>
         Day: <input type="number" placeholder="Day" ng-model="ctrl.day" min="1" max="31"><br/>
-        Year: <input type="number" placeholder="Year" ng-model="ctrl.year" min="1850" max="2018"><br/>
+        Year: <input type="number" placeholder="Year" ng-model="ctrl.year" min="1850" max="{{ctrl.getMaxYear()}}"><br/>
         <input type="submit" value="Get Results">
       </form>
     </div>

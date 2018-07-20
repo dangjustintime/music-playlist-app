@@ -102,4 +102,11 @@ app.controller('MusicController', ['$http', function($http) {
       console.log(error);
     })
   }
+
+  this.getMaxYear = () => {
+    let date = new Date(Date.now());
+    return date.getFullYear();
+  }
+
+  this.getMaxYear();
 }])
