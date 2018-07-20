@@ -21,7 +21,7 @@
         <form ng-submit="ctrl.logIn()">
           <input type="text" placeholder="username" ng-model="ctrl.loginUser">
           <input type="password" placeholder="password" ng-model="ctrl.loginPass">
-          <input type="submit" value="Log In">
+          <input class="submitButton" type="submit" value="Log In">
         </form>
       </div>
       <div ng-if="registerAction">
@@ -57,7 +57,7 @@
       <h4>Results</h4>
       <ol class="resultsList">
         <li class="result" ng-repeat="song in ctrl.results">
-          <img ng-src="{{song.cover}}" alt="cover of {{song.title}}" class="coverArt"/> <p>{{song.title}} By {{song.artist}}  </p>
+            <img ng-src="{{song.cover}}" alt="cover of {{song.title}}" class="coverArt"/> <p><strong>{{song.title}}</strong></br> By {{song.artist}}  </p>
           <button ng-click="ctrl.addSongToPlaylist(song)" ng-if="ctrl.currentUser">Add to Playlist</button>
         </li>
       </ol>

@@ -17,8 +17,8 @@ input {
 }
 
 .coverArt {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
 }
 
 
@@ -29,6 +29,16 @@ h4 {
 .results {
   width: 90%;
   margin: auto;
+}
+
+.submitButton {
+    background-color: white;
+    color: red;
+}
+
+.result {
+  width: 200px;
+  padding: 1em;
 }
 
 .resultsList {
