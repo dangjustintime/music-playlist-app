@@ -5,7 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "bcrypt": "^3.0.0",
-    "billboard-top-100": "^2.1.1",
+    "billboard-top-100": "git+https://github.com/ECBConnors/billboard-top-100.git",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
     "mongoose": "^5.2.4"
