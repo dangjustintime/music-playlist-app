@@ -4,7 +4,10 @@
   "description": "Justin Dang",
   "main": "server.js",
   "dependencies": {
+    "bcrypt": "^3.0.0",
+    "billboard-top-100": "^2.1.1",
     "express": "^4.16.3",
+    "express-session": "^1.15.6",
     "mongoose": "^5.2.4"
   },
   "devDependencies": {},

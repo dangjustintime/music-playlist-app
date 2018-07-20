@@ -2,15 +2,26 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const session = require('express-session');
 
 // middleware
 app.use(express.static('public'));
 app.use(express.json());
 
-/*
-const todosController = require('./controllers/todos.js');
-app.use('/todos', todosController);
-*/
+app.use(session({
+    secret:'feedmeseymour',
+    resave: false,
+    saveUninitialized: false
+}));
+
+const userController = require('./controllers/users.js');
+app.use('/users', userController);
+const playlistController = require('./controllers/playlists.js');
+app.use('/playlists', playlistController);
+const bboardController = require('./controllers/bboard.js');
+app.use('/bboard', bboardController);
+const sessionController = require('./controllers/sessions.js');
+app.use('/sessions', sessionController);
 
 app.listen(3000, () => {
     console.log('listening...');
