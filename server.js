@@ -7,6 +7,10 @@ const mongoose = require('mongoose');
 app.use(express.static('public'));
 app.use(express.json());
 
+const userController = require('./controllers/users.js');
+app.use('/user', userController);
+const playlistController = require('./controllers/playlists.js');
+app.use('/playlist', playlistController);
 const bboardController = require('./controllers/bboard.js');
 app.use('/bboard', bboardController);
 
