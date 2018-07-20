@@ -2,13 +2,14 @@
 <html lang="en" dir="ltr" ng-app="MusicApp">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Hot 100</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js" charset="utf-8"></script>
     <script src="/js/app.js" charset="utf-8"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
     <link rel="stylesheet" href="/css/main.css">
   </head>
   <body ng-controller="MusicController as ctrl">
+    <h1>Check Out Your Favorite Hits!</h1>
     <!-- Offer the user a login option if they're not logged in -->
     <div class="login" ng-if="!ctrl.currentUser">
       <a href="#" ng-click="loginAction=true;registerAction=false">Log In</a>
