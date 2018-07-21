@@ -7,14 +7,19 @@
     <script src="/js/app.js" charset="utf-8"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
     <link rel="stylesheet" href="/css/main.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Monoton|Sunflower:300" rel="stylesheet">
+
   </head>
   <body ng-controller="MusicController as ctrl">
     <header>
-      <h1>Check Out Your Favorite Hits!</h1>
+      <h1><img class="logoImg" src="/img/vinyl3.png">  hitFinder</h1>
+      <h5>Find Your Favorite Hits From Yesterday & Today!</h5>
     </header>
     <!-- Offer the user a login option if they're not logged in -->
     <div class="login" ng-if="!ctrl.currentUser">
       <a href="#" ng-click="loginAction=true;registerAction=false">Log In</a>
+    </br>
       <a href="#" ng-click="registerAction=true;loginAction=false">Register</a>
       <!-- Open the appropriate form once the user selects log in or register -->
       <div ng-if="loginAction">
@@ -41,20 +46,22 @@
     <button id="logoutButton" ng-click="ctrl.logout()" ng-if="ctrl.currentUser">Logout</button>
 
   </br>
+  <div class="container">
     <!-- Billboard search form -->
     <div class="billboard">
-      Enter the date of billboard hits you wish to see
+      Enter the Date of Billboard Hits You Want to Find:
+    </br></br>
       <form ng-submit="ctrl.getBboard()">
         Month: <input type="number" placeholder="Month" ng-model="ctrl.month" min="1" max="12">
         Day: <input type="number" placeholder="Day" ng-model="ctrl.day" min="1" max="31">
-        Year: <input type="number" placeholder="Year" ng-model="ctrl.year" min="1850" max="{{ctrl.getMaxYear()}}">
+        Year: <input type="number" placeholder="Year" ng-model="ctrl.year" min="1950" max="{{ctrl.getMaxYear()}}">
         <input type="submit" value="Get Results">
       </form>
     </div>
 
     <!-- Billboard results -->
     <div class="results" ng-if="ctrl.results">
-      <h4>Results</h4>
+      <h2>Results</h2>
       <ol class="resultsList">
         <li class="result" ng-repeat="song in ctrl.results">
           <div>
@@ -65,6 +72,7 @@
       </ol>
     </div>
 
+  </br>
     <!-- User playlist -->
     <div class="playlists" ng-if="ctrl.userPlaylist">
       <h2>Playlist</h2>
@@ -75,5 +83,14 @@
       </div>
 
     </div>
+  </div>
   </body>
+  <footer>CREATED BY:
+
+  <a href="https://github.com/amitzed" target="_blank"> Amit Zaman</a>
+
+  <a href="https://github.com/dangjustintime" target="_blank"> Justin Dang</a>
+
+  <a href="https://github.com/ECBConnors" target="_blank"> Evan Conners</a>
+ </footer>
 </html>
