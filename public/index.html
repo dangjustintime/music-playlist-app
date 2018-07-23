@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="/css/main.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Monoton|Sunflower:300" rel="stylesheet">
-
   </head>
   <body ng-controller="MusicController as ctrl">
     <header>
@@ -37,6 +36,8 @@
         </form>
       </div>
     </div>
+    <!-- Log In Error Message -->
+    <p id="logInErrorMsg" ng-if"">Wrong Username or Password</p>
     <!-- Friendly reminder to log in or register -->
     <div class="noUser" ng-if="!ctrl.currentUser">
       Please Log In or Register to create and access your custom playlist
@@ -77,16 +78,19 @@
     <table class="playlists" ng-if="ctrl.userPlaylist">
       <div ng-if="ctrl.userPlaylist">
         <h2>Playlists</h2>
+        <!-- Create Playlist Form -->
         <form>
             <input type="text" placeholder="name">
             <input type="submit" value="New Playlist">
         </form>
         <br>
+        <!-- Dropdown menu for User's Playlists --> 
         <select>
           <option value="Rock">Rock</option>
           <option value="Hip-Hop">Hip-Hop</option>
           <option value="80\'s">80's</option>
         </select>
+        <!-- remove playlist button -->
         <button id="removePlaylistButton">Remove Playlist</button>
       </div>
       <thread>

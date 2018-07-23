@@ -151,6 +151,10 @@ footer {
    padding-bottom: 5px;
 }
 
+#logInErrorMsg {
+    color: #FF5C58;
+}
+
 a {
   text-decoration: none;
   color: #512C54;
