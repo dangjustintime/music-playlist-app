@@ -78,11 +78,11 @@
     <div ng-if="ctrl.userPlaylists">
       <h2>Playlists</h2>
       <form ng-submit="ctrl.createPlaylist()">
-        <input type="text" placeholder="name" ng-model="ctrl.newPlaylistName" required><span class='validity'></span>
+        <input type="text" placeholder="name" ng-model="ctrl.newPlaylistName">
         <input type="submit" value="New Playlist">
       </form>
       <select ng-model="ctrl.currentPlaylist" ng-options="playlist.name for playlist in ctrl.userPlaylists"></select>
-      <button id="removePlaylistButton" ng-click="ctrl.removePlaylist()">Remove Playlist</button>
+      <button class="deletionButton" ng-click="ctrl.removePlaylist()">Remove Playlist</button>
     </div>
     <table class="playlists" ng-if="ctrl.userPlaylists">
       <thead>
@@ -96,7 +96,7 @@
           <td><img ng-src="{{song.cover}}" alt="cover of {{song.title}}" class="coverArt"/></td>
           <td>{{song.title}}</td>
           <td>{{song.artist}}</td>
-          <td ng-click="ctrl.removeSongFromPlaylist(song)">x</td>
+          <td><button class="deletionButton" ng-click="ctrl.removeSongFromPlaylist(song)">x</button></td>
         </tr>
       </tbody>
 
