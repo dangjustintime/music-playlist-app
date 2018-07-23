@@ -24,8 +24,6 @@ app.controller('MusicController', ['$http', function($http) {
   }
 
   this.register = () => {
-    console.log('user: ', this.registerUser);
-    console.log('pass: ', this.registerPass);
     $http({
       method:'POST',
       url:'/users',
@@ -36,7 +34,9 @@ app.controller('MusicController', ['$http', function($http) {
     }).then(response => {
       this.currentUser = response.data
       console.log('CurrentUser: ', this.currentUser);
-      this.createPlaylist('Playlist1');
+      this.newPlaylistName = 'Playlist1';
+      this.userPlaylists = []
+      this.createPlaylist();
     }, error => {
       console.log(error);
     })
@@ -75,7 +75,9 @@ app.controller('MusicController', ['$http', function($http) {
         name: this.newPlaylistName
       }
     }).then(response => {
-      this.userPlaylists.push(response.data)
+      this.userPlaylists.push(response.data);
+      this.currentPlaylist = response.data;
+      this.newPlaylistName = '';
     }, error => {
       console.log(error);
     })
