@@ -9,7 +9,7 @@
 ![](assets/markdown-img-paste-20180723125633838.png)
 
 
-### Sometimes you wonder what songs most people were listening to on a certain day back in time, whether the day was yesterday or on June 21, 1968.  It's likely that this music was created in response to events in the world or even helped shaped cultures like "Folsom Prison Blues" by Johnny Cash.  [hitFinder](https://mighty-island-52745.herokuapp.com/) is an app you can use to travel in musical time.  You can save songs from different pinpoints in time to create your own musical universe.
+### Sometimes you wonder what songs most people were listening to on a certain day back in time, whether the day was yesterday or on June 21, 1968.  It's likely that this music was created in response to events in the world or even helped shape cultures like "Folsom Prison Blues" by Johnny Cash.  [hitFinder](https://mighty-island-52745.herokuapp.com/) is an app you can use to travel in musical time.  You can save songs from different pinpoints in time to create your own musical universe.
 
 ### Design:
 In the interface of hitFinder an unregistered user can do a search for a list of hit songs by month, day and year, but they must be a registered and logged-in user to be able to create, edit, delete and save their personal playlists.  Registed users can delete individual songs in their playlist or the whole playlist itself.
