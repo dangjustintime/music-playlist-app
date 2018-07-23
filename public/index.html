@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en" dir="ltr" ng-app="MusicApp">
   <head>
     <meta charset="utf-8">
@@ -37,7 +37,7 @@
       </div>
     </div>
     <!-- Log In Error Message -->
-    <p id="logInErrorMsg" ng-if"">Wrong Username or Password</p>
+    <p id="logInErrorMsg" ng-if="ctrl.loginFailed">Wrong Username or Password</p>
     <!-- Friendly reminder to log in or register -->
     <div class="noUser" ng-if="!ctrl.currentUser">
       Please Log In or Register to create and access your custom playlist

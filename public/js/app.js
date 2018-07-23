@@ -1,8 +1,7 @@
 const app = angular.module('MusicApp', []);
 
 app.controller('MusicController', ['$http', function($http) {
-  console.log('hi');
-
+  this.loginFailed = false;
   this.logIn = () => {
     $http({
       method:'POST',
@@ -12,12 +11,14 @@ app.controller('MusicController', ['$http', function($http) {
         password: this.loginPass
       }
     }).then(response => {
+      this.loginFailed = false;
       this.currentUser = response.data
       console.log('CurrentUser', this.currentUser);
       this.getPlaylist();
       this.loginUser = ""
       this.loginPass = ""
     }, error => {
+      this.loginFailed = true;
       console.log(error);
     })
   }
