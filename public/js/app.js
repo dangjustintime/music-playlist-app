@@ -94,6 +94,19 @@ app.controller('MusicController', ['$http', function($http) {
     })
   }
 
+  this.removeSongFromPlaylist = (song) => {
+    this.currentPlaylist.songs.splice(this.currentPlaylist.songs.indexOf(song), 1);
+    $http({
+      method:'PUT',
+      url: '/playlists/' + this.currentPlaylist._id,
+      data: this.currentPlaylist
+    }).then(response => {
+      console.log('User Playlist: ', this.currentPlaylist);
+    }, error => {
+      console.log(error);
+    })
+  }
+
   this.getPlaylist = () => {
     $http({
       method:'GET',

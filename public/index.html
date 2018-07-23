@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr" ng-app="MusicApp">
   <head>
     <meta charset="utf-8">
@@ -96,7 +96,7 @@
           <td><img ng-src="{{song.cover}}" alt="cover of {{song.title}}" class="coverArt"/></td>
           <td>{{song.title}}</td>
           <td>{{song.artist}}</td>
-          <td ng-click="ctrl.removeSong(song)">x</td>
+          <td ng-click="ctrl.removeSongFromPlaylist(song)">x</td>
         </tr>
       </tbody>
 
