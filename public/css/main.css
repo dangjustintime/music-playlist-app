@@ -135,7 +135,7 @@ input[type=submit] {
   float: right;
 }
 
-#removePlaylistButton {
+.deletionButton {
     background-color: #FF5C58;
     color: white;
     float: right;
