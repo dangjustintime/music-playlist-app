@@ -72,34 +72,42 @@
       </ol>
     </div>
 
-  </br>
+  <br/>
     <!-- User playlist -->
-    <table class="playlists" ng-if="ctrl.userPlaylist">
-      <h2 ng-if="ctrl.userPlaylist">Playlist</h2>
-      <thread>
+    <div ng-if="ctrl.userPlaylists">
+      <h2>Playlists</h2>
+      <form ng-submit="ctrl.createPlaylist()">
+        <input type="text" placeholder="name" ng-model="ctrl.newPlaylistName">
+        <input type="submit" value="New Playlist">
+      </form>
+      <select ng-model="ctrl.currentPlaylist" ng-options="playlist.name for playlist in ctrl.userPlaylists"></select>
+      <button id="removePlaylistButton" ng-click="ctrl.removePlaylist()">Remove Playlist</button>
+    </div>
+    <table class="playlists" ng-if="ctrl.userPlaylists">
+      <thead>
         <th>Cover</th>
         <th>Song</th>
         <th>Artist</th>
         <th></th>
-      </thread>
+      </thead>
       <tbody>
-        <tr class="playlist" ng-repeat="song in ctrl.userPlaylist.songs">
+        <tr class="playlist" ng-repeat="song in ctrl.currentPlaylist.songs">
           <td><img ng-src="{{song.cover}}" alt="cover of {{song.title}}" class="coverArt"/></td>
           <td>{{song.title}}</td>
           <td>{{song.artist}}</td>
-          <td>X</td>
+          <td ng-click="ctrl.removeSong(song)">x</td>
         </tr>
       </tbody>
 
     </table>
   </div>
-  </body>
   <footer>CREATED BY:
 
-  <a href="https://github.com/amitzed" target="_blank"> Amit Zaman</a>
+    <a href="https://github.com/amitzed" target="_blank"> Amit Zaman</a>
 
-  <a href="https://github.com/dangjustintime" target="_blank"> Justin Dang</a>
+    <a href="https://github.com/dangjustintime" target="_blank"> Justin Dang</a>
 
-  <a href="https://github.com/ECBConnors" target="_blank"> Evan Connors</a>
- </footer>
+    <a href="https://github.com/ECBConnors" target="_blank"> Evan Connors</a>
+  </footer>
+  </body>
 </html>

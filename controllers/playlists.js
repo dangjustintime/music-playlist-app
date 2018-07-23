@@ -17,7 +17,11 @@ router.delete('/:id', (req, res)=>{
 
 router.post('/', (req, res) => {
   Playlists.create(req.body, (err, createdPlaylist) => {
-    res.json(createdPlaylist);
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(createdPlaylist);
+    }
   });
 })
 

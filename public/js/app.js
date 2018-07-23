@@ -35,7 +35,7 @@ app.controller('MusicController', ['$http', function($http) {
     }).then(response => {
       this.currentUser = response.data
       console.log('CurrentUser: ', this.currentUser);
-      this.createPlaylist();
+      this.createPlaylist('Playlist1');
     }, error => {
       console.log(error);
     })
@@ -64,29 +64,30 @@ app.controller('MusicController', ['$http', function($http) {
   }
 
   this.createPlaylist = () => {
+    console.log('creating Playlist (app.js)');
     $http({
       method: 'POST',
       url: '/playlists',
-      data: {
+      data:{
         owner: this.currentUser.username,
-        songs: []
+        songs: [],
+        name: this.newPlaylistName
       }
     }).then(response => {
-      this.userPlaylist = response.data
-      console.log('User Playlist: ', this.userPlaylist);
+      this.userPlaylists.push(response.data)
     }, error => {
       console.log(error);
     })
   }
 
   this.addSongToPlaylist = (song) => {
-    this.userPlaylist.songs.push(song)
+    this.currentPlaylist.songs.push(song)
     $http({
       method:'PUT',
-      url: '/playlists/' + this.userPlaylist._id,
-      data: this.userPlaylist
+      url: '/playlists/' + this.currentPlaylist._id,
+      data: this.currentPlaylist
     }).then(response => {
-      console.log('User Playlist: ', this.userPlaylist);
+      console.log('User Playlist: ', this.currentPlaylist);
     }, error => {
       console.log(error);
     })
@@ -97,9 +98,11 @@ app.controller('MusicController', ['$http', function($http) {
       method:'GET',
       url:'/playlists/' + this.currentUser.username
     }).then(response => {
-      this.userPlaylist = response.data[0];
-      console.log('Playlist ', this.userPlaylist);
-      console.log('songs ', this.userPlaylist.songs);
+      this.userPlaylists = response.data;
+      this.currentPlaylist = response.data[0];
+      console.log('Playlist ', this.currentPlaylist);
+      console.log('allPlaylists ', this.userPlaylists);
+      console.log('songs ', this.currentPlaylist.songs);
     }, error => {
       console.log(error);
     })
@@ -116,8 +119,20 @@ app.controller('MusicController', ['$http', function($http) {
       url:'/sessions'
     }).then(response =>{
       this.currentUser = undefined;
-      this.userPlaylist = undefined;
+      this.currentPlaylist = undefined;
+      this.userPlaylists = undefined
     },(error)=>{
+      console.log(error);
+    })
+  }
+
+  this.removePlaylist = () => {
+    $http({
+      method: 'DELETE',
+      url:'/playlists/' + this.currentPlaylist._id
+    }).then(response => {
+      this.getPlaylist()
+    }, error => {
       console.log(error);
     })
   }
