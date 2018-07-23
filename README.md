@@ -1,15 +1,15 @@
-# [hitFinder](https://mighty-island-52745.herokuapp.com/ "title" target="_blank")
+# [hitFinder](https://mighty-island-52745.herokuapp.com/)
 
 ## Find Your Favorite Hits From Yesterday & Today!
 ## Authors
-#### [_Justin Dang_](https://github.com/dangjustintime/ "title" target="_blank")
-#### [_Evan Connors_](https://github.com/ECBConnors/ "title" target="_blank")
-#### [_Amit Zaman_](https://github.com/amitzed/ "title" target="_blank")
+#### [_Justin Dang_](https://github.com/dangjustintime)
+#### [_Evan Connors_](https://github.com/ECBConnors)
+#### [_Amit Zaman_](https://github.com/amitzed)
 
 ![](assets/markdown-img-paste-20180723125633838.png)
 
 
-### Sometimes you wonder what songs most people were listening to on a certain day back in time, whether the day was yesterday or on June 21, 1968.  It's likely that this music was created in response to events in the world or even helped shaped cultures like "Folsom Prison Blues" by Johnny Cash.  [hitFinder](https://mighty-island-52745.herokuapp.com/ "title" target="_blank") is an app you can use to travel in musical time.  You can save songs from different pinpoints in time to create your own musical universe.
+### Sometimes you wonder what songs most people were listening to on a certain day back in time, whether the day was yesterday or on June 21, 1968.  It's likely that this music was created in response to events in the world or even helped shaped cultures like "Folsom Prison Blues" by Johnny Cash.  [hitFinder](https://mighty-island-52745.herokuapp.com/) is an app you can use to travel in musical time.  You can save songs from different pinpoints in time to create your own musical universe.
 
 ### Design:
 The interface of hitFinder
