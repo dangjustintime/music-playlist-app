@@ -78,7 +78,8 @@
     <div ng-if="ctrl.userPlaylists">
       <h2>Playlists</h2>
       <form ng-submit="ctrl.createPlaylist()">
-        <input type="text" placeholder="name" ng-model="ctrl.newPlaylistName">
+        <input type="text" placeholder="name" ng-model="ctrl.newPlaylistName" required>
+        <span class="validity"></span>
         <input type="submit" value="New Playlist">
       </form>
       <select ng-model="ctrl.currentPlaylist" ng-options="playlist.name for playlist in ctrl.userPlaylists"></select>
