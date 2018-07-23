@@ -135,6 +135,12 @@ input[type=submit] {
   float: right;
 }
 
+#removePlaylistButton {
+    background-color: #FF5C58;
+    color: white;
+    float: right;
+}
+
 footer {
    position:fixed;
    bottom:0;

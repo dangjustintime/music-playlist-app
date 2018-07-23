@@ -75,7 +75,20 @@
   </br>
     <!-- User playlist -->
     <table class="playlists" ng-if="ctrl.userPlaylist">
-      <h2 ng-if="ctrl.userPlaylist">Playlist</h2>
+      <div ng-if="ctrl.userPlaylist">
+        <h2>Playlists</h2>
+        <form>
+            <input type="text" placeholder="name">
+            <input type="submit" value="New Playlist">
+        </form>
+        <br>
+        <select>
+          <option value="Rock">Rock</option>
+          <option value="Hip-Hop">Hip-Hop</option>
+          <option value="80\'s">80's</option>
+        </select>
+        <button id="removePlaylistButton">Remove Playlist</button>
+      </div>
       <thread>
         <th>Cover</th>
         <th>Song</th>
@@ -87,11 +100,9 @@
           <td><img ng-src="{{song.cover}}" alt="cover of {{song.title}}" class="coverArt"/></td>
           <td>{{song.title}}</td>
           <td>{{song.artist}}</td>
-          <td>X</td>
+          <td>x</td>
         </tr>
       </tbody>
-
-    </div>
   </div>
   </body>
   <footer>CREATED BY:
