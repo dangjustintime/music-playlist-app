@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en" dir="ltr" ng-app="MusicApp">
   <head>
     <meta charset="utf-8">
@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="/css/main.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Monoton|Sunflower:300" rel="stylesheet">
-
   </head>
   <body ng-controller="MusicController as ctrl">
     <header>
@@ -37,6 +36,8 @@
         </form>
       </div>
     </div>
+    <!-- Log In Error Message -->
+    <p id="logInErrorMsg" ng-if="ctrl.loginFailed">Wrong Username or Password</p>
     <!-- Friendly reminder to log in or register -->
     <div class="noUser" ng-if="!ctrl.currentUser">
       Please Log In or Register to create and access your custom playlist
