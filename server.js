@@ -4,6 +4,7 @@ const app = express();
 const mongoose = require('mongoose');
 const session = require('express-session');
 const PORT = process.env.PORT || 3000;
+const mongoUri =  process.env.MONGODB_URI || 'mongodb://localhost:27017/playlist_app';
 
 // middleware
 app.use(express.static('public'));
@@ -30,7 +31,8 @@ app.listen(PORT, () => {
 });
 
 // connectiong to mongodb
-mongoose.connect('mongodb://localhost:27017/playlist_app', { useNewUrlParser: true });
+mongoose.connect(mongoUri);
+// mongoose.connect('mongodb://localhost:27017/playlist_app', { useNewUrlParser: true });
 mongoose.connection.once('open', () => {
     console.log('connected to mongoose');
 });
