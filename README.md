@@ -19,9 +19,10 @@ Mongoose, Express, AngularJS, Node.JS, Skeleton Framework,
 NPMs: billboard-top-100, express, mongoose, express-sessions, bcrypt.
 
 ### Approach:
-When we first embarked on creating this app, we discussed what we wanted the app to do after determining that we wanted it to be centered around music.  We looked at APIs from Napster and Spotify and finally decided on Billboard to receive information from their databases.  Then we focused on functionality while always keeping the user's experience in mind.  We began developing the basic functionality, and once that was achieved, we expanded it further and moved to the visual aspect of the site.  Developing the visual aspect of the site involved decisions on complementary colors to use, the framework, which was Skeleton, and then some animation that wasn't too distracting from the main purpose of the app.  As a strong team, the shared and separate tasks of the project were rolled out and completed efficiently, enhanced through the use of of ZenHub.
+When we first embarked on creating this app, we discussed what we wanted the app to do after determining that we wanted it to be centered around music.  We looked at APIs from Napster and Spotify and finally decided on Billboard to receive information from their databases.  Then we focused on functionality while always keeping the user's experience in mind.  We began developing the basic functionality and once that was achieved, we expanded it further and moved to the visual aspects of the site.  Developing the visual aspects involved decisions on complementary colors to use, the framework, which was Skeleton, and then some animation that wasn't too distracting from the main purpose of the app.  As a strong team, the shared and separate tasks of the project were rolled out and completed efficiently, enhanced through the use of of ZenHub.
 
 ### Future Expandability:
+In the future, we would want to add a functionality where when a song in a playlist is clicked, the song would play, and additionally add a feature where all the songs in the playlist would play one after another. 
 
 ### Unsolved Issues:
 
