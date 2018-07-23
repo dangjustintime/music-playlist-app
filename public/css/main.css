@@ -112,16 +112,26 @@ h2, h4 {
 }
 
 .resultsList:hover {
-  margin-left: -300px;
+  margin-left: -25%;
   cursor: e-resize;
 }
 
-.submitButton {
+.playlist img {
+    width: 100px;
+    height: 100px;
+}
+
+.playlist p {
+    font-size: 1.75em
+}
+
+input[type=submit] {
     background-color: white;
-    color: red;
+    color: #512C54;
 }
 
 #logoutButton {
+  background-color: white;
   float: right;
 }
 

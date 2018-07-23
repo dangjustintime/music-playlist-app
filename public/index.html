@@ -74,13 +74,22 @@
 
   </br>
     <!-- User playlist -->
-    <div class="playlists" ng-if="ctrl.userPlaylist">
+    <table class="playlists" ng-if="ctrl.userPlaylist">
       <h2>Playlist</h2>
-      <div class="playlistContainer">
-        <div class="playlist" ng-repeat="song in ctrl.userPlaylist.songs">
-          <img ng-src="{{song.cover}}" alt="cover of {{song.title}}" class="coverArt"/> <p>{{song.title}} By {{song.artist}}  </p>
-        </div>
-      </div>
+      <thread>
+        <th>Cover</th>
+        <th>Song</th>
+        <th>Artist</th>
+        <th></th>
+      </thread>
+      <tbody>
+        <tr class="playlist" ng-repeat="song in ctrl.userPlaylist.songs">
+          <td><img ng-src="{{song.cover}}" alt="cover of {{song.title}}" class="coverArt"/></td>
+          <td>{{song.title}}</td>
+          <td>{{song.artist}}</td>
+          <td>X</td>
+        </tr>
+      </tbody>
 
     </div>
   </div>
