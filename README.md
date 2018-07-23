@@ -12,7 +12,7 @@
 ### Sometimes you wonder what songs most people were listening to on a certain day back in time, whether the day was yesterday or on June 21, 1968.  It's likely that this music was created in response to events in the world or even helped shaped cultures like "Folsom Prison Blues" by Johnny Cash.  [hitFinder](https://mighty-island-52745.herokuapp.com/) is an app you can use to travel in musical time.  You can save songs from different pinpoints in time to create your own musical universe.
 
 ### Design:
-The interface of hitFinder
+In the interface of hitFinder an unregistered user can do a search for a list of hit songs by month, day and year, but they must be a registered and logged-in user to be able to create, edit, delete and save their personal playlists.  Registed users can delete individual songs in their playlist or the whole playlist itself.
 
 ### Technologies Used:
 Mongoose, Express, AngularJS, Node.JS, Skeleton Framework,
@@ -23,9 +23,6 @@ When we first embarked on creating this app, we discussed what we wanted the app
 
 ### Future Expandability:
 In the future, we would want to add a functionality where when a song in a playlist is clicked, the song would play, and additionally add a feature where all the songs in the playlist would play one after another.
-
-### Unsolved Issues:
-
 
 ### Heroku Link:
 https://mighty-island-52745.herokuapp.com/
