@@ -85,7 +85,7 @@
       <select ng-model="ctrl.currentPlaylist" ng-options="playlist.name for playlist in ctrl.userPlaylists"></select>
       <button class="deletionButton" ng-click="ctrl.removePlaylist()">Remove Playlist</button>
     </div>
-    <table class="playlists" ng-if="ctrl.userPlaylists">
+    <table class="playlists" ng-if="ctrl.currentUser && ctrl.currentPlaylist.songs[0]">
       <thead>
         <th>Cover</th>
         <th>Song</th>
@@ -102,6 +102,7 @@
       </tbody>
 
     </table>
+    <h3 ng-if="!ctrl.currentPlaylist.songs[0] && ctrl.currentUser">Your playlist is empty. Add some songs from the hits!</h3>
   </div>
   <footer>CREATED BY:
 
