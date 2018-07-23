@@ -7,14 +7,18 @@
     <script src="/js/app.js" charset="utf-8"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
     <link rel="stylesheet" href="/css/main.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Monoton|Sunflower:300" rel="stylesheet">
   </head>
   <body ng-controller="MusicController as ctrl">
     <header>
-      <h1>Check Out Your Favorite Hits!</h1>
+      <h1><img class="logoImg" src="/img/vinyl3.png">  hitFinder</h1>
+      <h5>Find Your Favorite Hits From Yesterday & Today!</h5>
     </header>
     <!-- Offer the user a login option if they're not logged in -->
     <div class="login" ng-if="!ctrl.currentUser">
       <a href="#" ng-click="loginAction=true;registerAction=false">Log In</a>
+    </br>
       <a href="#" ng-click="registerAction=true;loginAction=false">Register</a>
       <!-- Open the appropriate form once the user selects log in or register -->
       <div ng-if="loginAction">
@@ -32,6 +36,8 @@
         </form>
       </div>
     </div>
+    <!-- Log In Error Message -->
+    <p id="logInErrorMsg" ng-if="ctrl.loginFailed">Wrong Username or Password</p>
     <!-- Friendly reminder to log in or register -->
     <div class="noUser" ng-if="!ctrl.currentUser">
       Please Log In or Register to create and access your custom playlist
@@ -41,20 +47,22 @@
     <button id="logoutButton" ng-click="ctrl.logout()" ng-if="ctrl.currentUser">Logout</button>
 
   </br>
+  <div class="container">
     <!-- Billboard search form -->
     <div class="billboard">
-      Enter the date of billboard hits you wish to see
+      Enter the Date of Billboard Hits You Want to Find:
+    </br></br>
       <form ng-submit="ctrl.getBboard()">
         Month: <input type="number" placeholder="Month" ng-model="ctrl.month" min="1" max="12">
         Day: <input type="number" placeholder="Day" ng-model="ctrl.day" min="1" max="31">
-        Year: <input type="number" placeholder="Year" ng-model="ctrl.year" min="1850" max="{{ctrl.getMaxYear()}}">
+        Year: <input type="number" placeholder="Year" ng-model="ctrl.year" min="1950" max="{{ctrl.getMaxYear()}}">
         <input type="submit" value="Get Results">
       </form>
     </div>
 
     <!-- Billboard results -->
     <div class="results" ng-if="ctrl.results">
-      <h4>Results</h4>
+      <h2>Results</h2>
       <ol class="resultsList">
         <li class="result" ng-repeat="song in ctrl.results">
           <div>
@@ -65,15 +73,44 @@
       </ol>
     </div>
 
+  <br/>
     <!-- User playlist -->
-    <div class="playlists" ng-if="ctrl.userPlaylist">
-      <h2>Playlist</h2>
-      <div class="playlistContainer">
-        <div class="playlist" ng-repeat="song in ctrl.userPlaylist.songs">
-          <img ng-src="{{song.cover}}" alt="cover of {{song.title}}" class="coverArt"/> <p>{{song.title}} By {{song.artist}}  </p>
-        </div>
-      </div>
-
+    <div ng-if="ctrl.userPlaylists">
+      <h2>Playlists</h2>
+      <form ng-submit="ctrl.createPlaylist()">
+        <input type="text" placeholder="name" ng-model="ctrl.newPlaylistName" required>
+        <span class="validity"></span>
+        <input type="submit" value="New Playlist">
+      </form>
+      <select ng-model="ctrl.currentPlaylist" ng-options="playlist.name for playlist in ctrl.userPlaylists"></select>
+      <button class="deletionButton" ng-click="ctrl.removePlaylist()">Remove Playlist</button>
     </div>
+    <table class="playlists" ng-if="ctrl.currentUser && ctrl.currentPlaylist.songs[0]">
+      <thead>
+        <th>Cover</th>
+        <th>Song</th>
+        <th>Artist</th>
+        <th></th>
+      </thead>
+      <tbody>
+        <tr class="playlist" ng-repeat="song in ctrl.currentPlaylist.songs">
+          <td><img ng-src="{{song.cover}}" alt="cover of {{song.title}}" class="coverArt"/></td>
+          <td>{{song.title}}</td>
+          <td>{{song.artist}}</td>
+          <td><button class="deletionButton" ng-click="ctrl.removeSongFromPlaylist(song)">x</button></td>
+        </tr>
+      </tbody>
+
+    </table>
+    <h3 ng-if="!ctrl.currentPlaylist.songs[0] && ctrl.currentUser">Your Playlist is Empty, Add Some Songs From the Hits!!</h3>
+  </div>
+  <footer>CREATED BY:
+
+    <a href="https://github.com/amitzed" target="_blank"> Amit Zaman</a>
+
+    <a href="https://github.com/dangjustintime" target="_blank"> Justin Dang</a>
+
+    <a href="https://github.com/ECBConnors" target="_blank"> Evan Connors</a>
+  </footer>
   </body>
 </html>
