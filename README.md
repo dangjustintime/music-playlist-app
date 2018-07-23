@@ -6,11 +6,10 @@
 #### _Evan Connors_
 #### _Amit Zaman_
 
+![](assets/markdown-img-paste-20180723125633838.png)
 
-![Screen Shot]
-(/img/screenshot1.png)
 
-Sometimes you wonder what songs most people were listening to on a certain day back in time, whether the day was yesterday or on June 21, 1968.  It's likely that this music was created in response to events in the world or even helped shaped cultures like "Folsom Prison Blues" by Johnny Cash.  hitFinder is an app you can use to travel in musical time.  You can save songs from different pinpoints in time to create your own musical universe.
+### Sometimes you wonder what songs most people were listening to on a certain day back in time, whether the day was yesterday or on June 21, 1968.  It's likely that this music was created in response to events in the world or even helped shaped cultures like "Folsom Prison Blues" by Johnny Cash.  hitFinder is an app you can use to travel in musical time.  You can save songs from different pinpoints in time to create your own musical universe.
 
 ### Design:
 The interface of hitFinder
