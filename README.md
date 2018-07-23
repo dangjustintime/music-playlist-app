@@ -1,7 +1,10 @@
 # hitFinder
 
 ## Find Your Favorite Hits From Yesterday & Today!
-## Authors #### Justin Dang #### Evan Connors #### Amit Zaman
+## Authors
+#### _Justin Dang_
+#### _Evan Connors_
+#### _Amit Zaman_
 
 
 ![Screen Shot]
